@@ -69,10 +69,13 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Text(
-                              movie!.title!,
-                              style: CustomTextStyles.movieTitle(),
-                              textAlign: TextAlign.center,
+                            Padding(
+                              padding: const EdgeInsets.only(left: 10.0,right: 10.0),
+                              child: Text(
+                                movie!.title!,
+                                style: CustomTextStyles.movieTitle(),
+                                textAlign: TextAlign.center,
+                              ),
                             ),
                             Row(
                               children: [

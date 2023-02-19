@@ -34,7 +34,11 @@ Start the application
 # General:
 
 ### Q) Which parts did you spend the most time with? What did you find most difficult?
-    I spent some time on devloping the home page since it has so many functionality. The little bit difficult part was developing the search function. 
+    I spent more time on developing the home page since it has so many functionalities. 
+    The was a little bit difficult to develop the search function. 
 
 ### Q) How did you find the test overall? Did you have any issues or have difficulties completing?If you have any suggestions on how we can improve the test, we'd love to hear them.
-    Overall this test was a perfect technical task to get to know the developer's capabilities. I really enjoyed implementing this project.
+    Overall, this test was a perfect technical task to get to know the developer's capabilities. 
+    I have added the error message "Something went wrong" for API down scenario and for no internet connection scenario. 
+    As well as when there is no search result for the searched keyword, I am displaying the empty message "There are no results for <searched keyword>".
+    I really enjoyed implementing this project. 

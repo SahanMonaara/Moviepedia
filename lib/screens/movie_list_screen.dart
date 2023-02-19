@@ -181,7 +181,7 @@ class _MoviesListScreenState extends State<MoviesListScreen> {
                                                             .searchMovieList
                                                             .isNotEmpty
                                                         ? """ Search results for "${searchController.text}" """
-                                                        : """ There is no results for "${searchController.text}" """,
+                                                        : """ There are no results for "${searchController.text}" """,
                                                     _searchedMovieController,
                                                     AppConst.searchedList)),
                                           ))
