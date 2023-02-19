@@ -1,9 +1,4 @@
-// List<Launch> launchFromJson(String str) =>
-//     List<Launch>.from(json.decode(str).map((x) => Launch.fromJson(x)));
-//
-// String launchToJson(List<Launch> data) =>
-//     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
-
+/// A class that is used to parse the json data from the API.
 class Movies {
   double? averageRating;
   String? backdropPath;

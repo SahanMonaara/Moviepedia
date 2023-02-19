@@ -1,9 +1,8 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-
 import '../../common/app_colors.dart';
 
+/// We're creating two circles with a blur effect and positioning them on the screen
 class Background extends StatelessWidget {
   const Background({super.key});
 

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
-
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
-
 import '../../common/app_colors.dart';
 
+/// `DetailsContainer` is a `StatelessWidget` that takes in a `width` and a
+/// `childWidget` and returns a `ClipRRect` with a `Container` that has a
+/// `BackdropFilter` and a `Container` with a `BoxDecoration` and a `LinearGradient`
+/// and a `Center` with the `childWidget`
 class DetailsContainer extends StatelessWidget {
-   const DetailsContainer(
-      {Key? key,
-        required this.width,
-        required this.childWidget})
+  const DetailsContainer(
+      {Key? key, required this.width, required this.childWidget})
       : super(key: key);
 
   final double width;
@@ -34,17 +34,17 @@ class DetailsContainer extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
-                border: GradientBoxBorder(
+                border: const GradientBoxBorder(
                     gradient: LinearGradient(colors: [
-                      AppColors.secondary,
-                      AppColors.secondary,
-                    ])),
+                  AppColors.secondary,
+                  AppColors.secondary,
+                ])),
                 gradient: LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: [
-                      Colors.black,
-                      Colors.black.withOpacity(0.6),
+                      AppColors.black,
+                      AppColors.black.withOpacity(0.6),
                     ]),
               ),
             ),

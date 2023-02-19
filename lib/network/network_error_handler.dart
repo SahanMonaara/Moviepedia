@@ -23,23 +23,23 @@ class NetworkErrorHandler {
     try {
       if (response.statusCode == 503) {
         errorMessage = NetException();
-        errorMessage.messageId = CommonMessageId.SERVICE_UNAVAILABLE;
-        errorMessage.message = CommonMessages.SERVER_UNDER_MAINTENANCE;
+        errorMessage.messageId = CommonMessageId.serviceUnavailable;
+        errorMessage.message = CommonMessages.serverUnderMaintenance;
       } else if (response.statusCode == 401) {
         errorMessage = NetException();
-        errorMessage.messageId = CommonMessageId.UNAUTHORIZED;
-        errorMessage.message = CommonMessages.UNAUTHORIZED_ACCESS;
+        errorMessage.messageId = CommonMessageId.unauthorized;
+        errorMessage.message = CommonMessages.unauthorizedAccess;
       } else if (response.statusCode == 404) {
         errorMessage = NetException();
-        errorMessage.messageId = CommonMessageId.NOT_FOUND;
-        errorMessage.message = CommonMessages.ENDPOINT_NOT_FOUND;
+        errorMessage.messageId = CommonMessageId.notFound;
+        errorMessage.message = CommonMessages.endpointNotFound;
       } else {
         errorMessage = netExceptionFromJson(response.body);
       }
     } catch (e) {
       errorMessage = NetException();
-      errorMessage.messageId = CommonMessageId.SOMETHING_WENT_WRONG;
-      errorMessage.message = CommonMessages.WENT_WRONG;
+      errorMessage.messageId = CommonMessageId.somethingWentWrong;
+      errorMessage.message = CommonMessages.somethingWentWrong;
     }
 
     Log.err("err ${errorMessage.message}");

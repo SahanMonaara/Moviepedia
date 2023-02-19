@@ -1,30 +1,28 @@
-// ignore_for_file: constant_identifier_names
-
 import 'dart:convert';
 
 /// It contains all the common messages that are used in the app
 class CommonMessages {
-  static const String EMPTY_DATA = "No data found";
-  static const String SERVER_UNDER_MAINTENANCE =
+  static const String emptyData = "No data found";
+  static const String serverUnderMaintenance =
       "Server is currently under maintenance";
-  static const String UNAUTHORIZED_ACCESS = "Unauthorized access";
-  static const String ENDPOINT_NOT_FOUND = "Something went wrong";
-  static const String WENT_WRONG = "Something went wrong";
+  static const String unauthorizedAccess = "Unauthorized access";
+  static const String endpointNotFound = "Something went wrong";
+  static const String somethingWentWrong = "Something went wrong";
 }
 
 /// `ExceptionCode` is a class that contains constants for exception codes
 class ExceptionCode {
-  static const int CODE_400 = 400;
-  static const int CODE_000 = 000;
+  static const int code400 = 400;
+  static const int code000 = 000;
 }
 
 /// It's a class that contains static constants that represent the error messages
 /// that are common to all the API calls
 class CommonMessageId {
-  static const String SERVICE_UNAVAILABLE = "SERVICE_UNAVAILABLE";
-  static const String UNAUTHORIZED = "UNAUTHORIZED";
-  static const String NOT_FOUND = "NOT_FOUND";
-  static const String SOMETHING_WENT_WRONG = "SOMETHING_WENT_WRONG";
+  static const String serviceUnavailable = "SERVICE_UNAVAILABLE";
+  static const String unauthorized = "UNAUTHORIZED";
+  static const String notFound = "NOT_FOUND";
+  static const String somethingWentWrong = "SOMETHING_WENT_WRONG";
 }
 
 /// It takes a JSON string and returns a Dart object

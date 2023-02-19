@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
 /// It's a simple class that allows you to print out different types of logs
-// ignore_for_file: avoid_print
 
 class Log {
   static const bool _isShowDebug = true;

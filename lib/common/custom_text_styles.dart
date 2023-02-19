@@ -7,6 +7,7 @@ class CustomTextStyles {
     return GoogleFonts.nunito(
         color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20);
   }
+
   static TextStyle movieTitle() {
     return GoogleFonts.nunito(
         color: Colors.white, fontWeight: FontWeight.w900, fontSize: 30);

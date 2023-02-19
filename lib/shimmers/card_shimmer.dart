@@ -3,6 +3,7 @@ import 'package:shimmer/shimmer.dart';
 import 'package:moviepedia/shimmers/shimmer_config.dart';
 import '../common/app_colors.dart';
 
+/// It's a ListView.builder that returns a Shimmer.fromColors widget
 class TripCardShimmer extends StatelessWidget {
   final int itemCount;
   final Axis axis;
@@ -33,11 +34,11 @@ class TripCardShimmer extends StatelessWidget {
           highlightColor: ShimmerConfig.highlightColor,
           period: ShimmerConfig.period,
           child: Container(
-            height: 250,
+            height: 180,
             padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
             margin: const EdgeInsets.only(bottom: 20),
             decoration: BoxDecoration(
-              color: AppColors.bgBlue,
+              color: AppColors.secondary,
               borderRadius: BorderRadius.circular(16),
             ),
             child: Row(
@@ -73,24 +74,6 @@ class TripCardShimmer extends StatelessWidget {
                           width: 2,
                           height: 20,
                           color: Colors.white,
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                              width: 20,
-                              height: 20,
-                              decoration: const BoxDecoration(
-                                color: Colors.white,
-                                shape: BoxShape.circle,
-                              ),
-                            ),
-                            const SizedBox(width: 10),
-                            Container(
-                              width: 20,
-                              height: 10,
-                              color: Colors.white,
-                            ),
-                          ],
                         ),
                       ],
                     ),

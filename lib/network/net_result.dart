@@ -7,8 +7,6 @@ class Result<Type> {
   NetException? exception;
   int? statusCode;
   Net? net;
-  bool isFromCache = false;
-  String? token;
 
   bool isSuccess() {
     if (exception == null) return true;

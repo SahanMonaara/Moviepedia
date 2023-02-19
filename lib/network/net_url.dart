@@ -1,9 +1,8 @@
 /// It contains all the URLs that we will be using in our app
 class URL {
-  static String serverUrl = "https://api.themoviedb.org/4";
+  static const String serverUrl = "https://api.themoviedb.org/4";
 
-  static String getMovieListUrl = "$serverUrl/list/1";
+  static const String getMovieListUrl = "$serverUrl/list/1";
 
-  static String getMovieDetailsUrl = "$serverUrl/list/{id}";
-
+  static const String getMovieDetailsUrl = "$serverUrl/list/{id}";
 }

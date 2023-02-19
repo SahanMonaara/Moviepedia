@@ -1,5 +1,3 @@
-// ignore_for_file: non_constant_identifier_names
-// ignore: constant_identifier_names
 import 'dart:convert';
 import 'package:moviepedia/common/app_const.dart';
 
@@ -9,8 +7,7 @@ import 'net_result.dart';
 import 'package:http/http.dart' as http;
 import 'network_error_handler.dart';
 
-// ignore: constant_identifier_names
-enum NetMethod { GET, POST, DELETE, PUT, MULTIPART }
+enum NetMethod { get, post, delete, put, multipart }
 
 class Net {
   String url;
@@ -39,22 +36,26 @@ class Net {
     this.excludeToken = false,
   });
 
+  /// It performs the request based on the method type.
+  ///
+  /// Returns:
+  ///   A Future<Result>
   Future<Result> perform() async {
     http.Response response;
     switch (method) {
-      case NetMethod.GET:
+      case NetMethod.get:
         response = await get();
         break;
-      case NetMethod.POST:
+      case NetMethod.post:
         response = await post();
         break;
-      case NetMethod.PUT:
+      case NetMethod.put:
         response = await put();
         break;
-      case NetMethod.DELETE:
+      case NetMethod.delete:
         response = await delete();
         break;
-      case NetMethod.MULTIPART:
+      case NetMethod.multipart:
         response = await multiPart();
         break;
     }
@@ -222,7 +223,7 @@ class Net {
   Future<Map<String, String>> getHeadersForRequest() async {
     headers ??= {};
     headers!.putIfAbsent("Content-Type", () => "application/json");
-    headers!.putIfAbsent("Authorization", () =>  AppConst.Token);
+    headers!.putIfAbsent("Authorization", () =>  AppConst.token);
     headers!.putIfAbsent("Accept", () => "application/json");
     return headers!;
   }
@@ -260,7 +261,6 @@ class Net {
     Result result = Result();
     result.statusCode = response.statusCode;
     result.net = this;
-    result.token = response.headers['authorization'];
 
     NetException? netException = NetworkErrorHandler.handleError(response);
     if (netException != null) {

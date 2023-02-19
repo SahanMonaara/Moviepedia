@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -24,6 +22,7 @@ class _MovieBannerState extends State<MovieBanner> {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+
     return Container(
       margin: const EdgeInsets.only(right: 15),
       child: Column(
@@ -52,7 +51,7 @@ class _MovieBannerState extends State<MovieBanner> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
-                       width: screenWidth * 0.6,
+                      width: screenWidth * 0.6,
                       child: Text(
                         widget.singleDetail.title ?? "Title",
                         overflow: TextOverflow.ellipsis,
@@ -64,7 +63,7 @@ class _MovieBannerState extends State<MovieBanner> {
                     ),
                     Row(
                       children: [
-                        Image(
+                        const Image(
                           width: 15,
                           height: 15,
                           image: AssetImage(AppAssets.star),
@@ -88,12 +87,13 @@ class _MovieBannerState extends State<MovieBanner> {
                           .tapOnFavourite(widget.singleDetail);
                     },
                     child: Provider.of<MovieProvider>(context, listen: false)
-                        .checkFavouriteStatus(widget.singleDetail)
+                            .checkFavouriteStatus(widget.singleDetail)
                         ? const Icon(
-                      Icons.favorite,
-                      color: Colors.red,
-                    )
-                        : const Icon(Icons.favorite_outline, color: Colors.red))
+                            Icons.favorite,
+                            color: AppColors.red,
+                          )
+                        : const Icon(Icons.favorite_outline,
+                            color: AppColors.red))
               ],
             ),
           ),

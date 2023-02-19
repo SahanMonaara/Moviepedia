@@ -7,7 +7,6 @@ import 'package:provider/provider.dart';
 import 'package:moviepedia/providers/movie_provider.dart';
 
 import '../common/app_assets.dart';
-import '../common/app_colors.dart';
 
 class SplashScreen extends StatefulWidget {
   static const routeName = '/splash-screen';
@@ -56,47 +55,45 @@ class _SplashScreenState extends State<SplashScreen> {
   /// It navigates to the LaunchesListScreen and removes all the previous screens
   /// from the stack.
   void navigateToHome() async {
-    Navigator.of(context).pushNamedAndRemoveUntil(
-        MoviesListScreen.routeName, (route) => false);
+    Navigator.of(context)
+        .pushNamedAndRemoveUntil(MoviesListScreen.routeName, (route) => false);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          const Background(),
-          SizedBox(
-            height: double.infinity,
-            child: Stack(
-              children: [
-                Center(
-                  child: SizedBox(
-                    height:70,
-                    child: Image.asset(
-                      AppAssets.logo,
-                      fit: BoxFit.fitHeight,
-                    ),
+        body: Stack(
+      children: [
+        const Background(),
+        SizedBox(
+          height: double.infinity,
+          child: Stack(
+            children: [
+              Center(
+                child: SizedBox(
+                  height: 70,
+                  child: Image.asset(
+                    AppAssets.logo,
+                    fit: BoxFit.fitHeight,
                   ),
                 ),
-                const Positioned(
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  child: Padding(
-                    padding: EdgeInsets.only(bottom: 50),
-                    child: SpinKitThreeBounce(
-                      color: Colors.white,
-                      size: 30,
-                    ),
+              ),
+              const Positioned(
+                bottom: 0,
+                left: 0,
+                right: 0,
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 50),
+                  child: SpinKitThreeBounce(
+                    color: Colors.white,
+                    size: 30,
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-        ],
-      )
-
-    );
+        ),
+      ],
+    ));
   }
 }

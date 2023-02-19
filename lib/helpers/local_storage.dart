@@ -1,8 +1,4 @@
-// ignore_for_file: non_constant_identifier_names
-
-import 'dart:convert';
-
-import 'package:moviepedia/models/movies.dart';
+import 'package:moviepedia/common/app_const.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LocalStorage {
@@ -18,21 +14,23 @@ class LocalStorage {
 
   LocalStorage._internal();
 
-  /// > Get the string value of the key 'FAVOURITE_LIST' from the shared preferences
+
+  /// It gets the favourite list from the shared preferences.
   ///
   /// Returns:
   ///   A Future<String?>
   Future<String?> getFavouriteList() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getString('FAVOURITE_LIST');
+    return prefs.getString(AppConst.favouriteList);
   }
 
-  /// It saves the favourite list to the local storage.
+
+  /// It saves the favourite list to the shared preferences.
   ///
   /// Args:
   ///   list (String): The list of favourite items.
   Future<void> saveFavouriteList(String list) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString('FAVOURITE_LIST', list);
+    await prefs.setString(AppConst.favouriteList, list);
   }
 }

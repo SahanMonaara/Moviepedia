@@ -5,14 +5,14 @@ import 'package:moviepedia/common/app_assets.dart';
 import 'package:moviepedia/common/app_const.dart';
 import 'package:provider/provider.dart';
 
+import '../../common/app_colors.dart';
 import '../../models/movies.dart';
 import '../../providers/movie_provider.dart';
 
 class MovieTile extends StatefulWidget {
   final SingleMovie singleDetail;
 
-  const MovieTile({Key? key, required this.singleDetail})
-      : super(key: key);
+  const MovieTile({Key? key, required this.singleDetail}) : super(key: key);
 
   @override
   State<MovieTile> createState() => _MovieTileState();
@@ -32,7 +32,8 @@ class _MovieTileState extends State<MovieTile> {
             child: ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(10)),
               child: CachedNetworkImage(
-                imageUrl: "${AppConst.imageUrl}${widget.singleDetail.posterPath}",
+                imageUrl:
+                    "${AppConst.imageUrl}${widget.singleDetail.posterPath}",
                 placeholder: (context, url) => const Center(
                   child: CircularProgressIndicator(),
                 ),
@@ -61,7 +62,7 @@ class _MovieTileState extends State<MovieTile> {
                   ),
                   Row(
                     children: [
-                      Image(
+                      const Image(
                         width: 15,
                         height: 15,
                         image: AssetImage(AppAssets.star),
@@ -85,11 +86,12 @@ class _MovieTileState extends State<MovieTile> {
                         .tapOnFavourite(widget.singleDetail);
                   },
                   child: Provider.of<MovieProvider>(context, listen: false)
-                      .checkFavouriteStatus(widget.singleDetail)
-                      ?  const Icon(
-                    Icons.favorite,
-                    color: Colors.red,
-                  ):const Icon(Icons.favorite_outline, color: Colors.red))
+                          .checkFavouriteStatus(widget.singleDetail)
+                      ? const Icon(
+                          Icons.favorite,
+                          color: AppColors.red,
+                        )
+                      : const Icon(Icons.favorite_outline, color: AppColors.red))
             ],
           ),
         ],
